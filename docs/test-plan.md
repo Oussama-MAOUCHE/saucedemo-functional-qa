@@ -1,10 +1,14 @@
 # SauceDemo Functional QA — Test Plan
 
+**Author:** Oussama MAOUCHE  
+**Version:** 1.0  
+**Last updated:** 17 August 2026
+
 ## 1. Project Overview
 
 This project covers manual functional testing of the SauceDemo (Swag Labs) web application.
 
-The purpose of the project is to validate the application's main user workflows, document test execution results, identify reproducible functional defects, and demonstrate a structured manual QA process.
+The purpose of the project is to validate the application's main user workflows, document test execution results, identify reproducible functional defects, and maintain a structured and traceable manual QA process.
 
 Application under test: https://www.saucedemo.com/
 
@@ -42,7 +46,7 @@ The objectives of this testing effort are to :
 - Test automation
 - Performance and load testing
 - Security penetration testing
-- Advanced accessibility auditing
+- Formal accessibility testing / WCAG audit
 - Cross-browser and cross-device testing
 - Real payment processing
 - Systems or services outside SauceDemo
@@ -51,7 +55,7 @@ The objectives of this testing effort are to :
 
 Testing will be performed manually using a risk-based and structured functional testing approach.
 
-The authentication module will receive deeper test coverage and will be used to demonstrate multiple test design techniques. Other application areas will receive focused functional coverage based on their importance within the main user journey.
+The authentication module will receive deeper coverage so that multiple test design techniques can be applied in a focused area. Other application areas will receive focused functional coverage based on their importance within the main user journey.
 
 Testing will include both scripted test cases and exploratory testing.
 
@@ -62,7 +66,7 @@ Testing will include both scripted test cases and exploratory testing.
 - Negative Testing
 - Exploratory Testing
 - Regression Testing
-- Retesting
+- Confirmation Testing (Retesting)
 
 ### Test Design Techniques
 
@@ -72,9 +76,27 @@ The following techniques will be applied where relevant :
 - Boundary Value Analysis
 - Decision Table Testing
 - Error Guessing
-- Positive and Negative Scenario Design
 
 Boundary Value Analysis will only be used where an actual or observable boundary exists. No undocumented field limits will be assumed.
+
+### Risk Focus and Test Priorities
+
+Testing effort will be prioritized according to the impact of each function on the main user journey.
+
+**High priority:**
+- Authentication
+- Shopping cart
+- Checkout
+- Order completion
+
+**Medium priority:**
+- Product inventory
+- Product details
+- Product sorting
+- Navigation
+- Logout
+
+Authentication will receive additional depth as a focused test-design exercise, while cart and checkout flows remain critical from a user-journey perspective.
 
 ### Authentication Deep-Dive
 
@@ -90,7 +112,7 @@ Testing will include :
 - Session and logout behavior
 - Exploratory authentication scenarios
 
-The purpose is to demonstrate structured test design rather than simply execute basic valid/invalid login cases.
+The Login functionality receives deeper coverage because it provides a focused area for applying multiple test design techniques, input variations, and user-state scenarios.
 
 ## 5. Test Environment
 
@@ -109,6 +131,12 @@ The purpose is to demonstrate structured test design rather than simply execute 
 - Screen resolution : 1920 x 1080
 
 Testing for this project will be performed on one primary browser and environment. Cross-browser and cross-device compatibility testing are outside the current scope.
+
+### Test Data
+
+- Public demo accounts and credentials provided by the application
+- Synthetic checkout information created only for testing
+- No real personal, customer, or payment data will be used
 
 ## 6. Entry Criteria
 
@@ -132,7 +160,14 @@ The planned testing cycle can be considered complete when:
 - Test execution results have been recorded.
 - A final test summary has been prepared.
 
-  ## 8. Defect Management
+## 8. Test Result Criteria
+
+- **Passed:** The actual result matches the expected result.
+- **Failed:** The actual result differs from the expected result and the behavior can be reproduced.
+- **Blocked:** The test cannot be completed because a required condition, dependency, or environment is unavailable.
+
+  
+## 9. Defect Management
 
 A failed test will not automatically be considered a defect.
 
@@ -154,7 +189,7 @@ Each defect report should include:
 
 If a reported issue can no longer be reproduced during the project, it will be reviewed and documented accordingly.
 
-## 9. Test Deliverables
+## 10. Test Deliverables
 
 The project will produce the following testing artifacts:
 
@@ -172,12 +207,12 @@ Confirmed defects will be tracked in Jira.
 
 Final portfolio documentation and selected test evidence will be stored in the GitHub project repository.
 
-## 10. Risks and Limitations
+## 11. Risks and Limitations
 
 This project is performed against a public demonstration application and has several limitations:
 
-- No formal business requirements or product specification have been provided.
-- Expected behavior is based on the visible application behavior and normal e-commerce conventions.
+- No formal business requirements or product specifications have been provided.
+- Expected behavior is derived from available UI cues, supplied demo data, and common e-commerce conventions. Where expected behavior is unclear, the finding will be documented as an observation rather than automatically reported as a defect.
 - Testing is performed as black-box testing without access to the source code, API, database, or server-side implementation.
 - The application may be changed or become temporarily unavailable without notice.
 - Testing is limited to one primary browser and desktop environment.
@@ -186,10 +221,8 @@ This project is performed against a public demonstration application and has sev
 
 These limitations will be considered when interpreting test results and writing the final test summary.
 
-## 11. Project Ownership
+## 12. Project Ownership
 
-This is an independent QA portfolio project performed by Oussama MAOUCHE.
+This is an independent QA portfolio project by Oussama MAOUCHE.
 
-The testing, test design, execution, documentation, and reporting are carried out as part of an independent professional practice project.
-
-Sauce Labs is not a client of this project and did not commission this testing work.
+Sauce Labs is not a client and did not commission this testing work.
