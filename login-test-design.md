@@ -79,3 +79,32 @@ The additional delay observed with `performance_glitch_user` is recorded as an o
 | R7 | No | N/A | No | N/A | N/A | Login is denied with `Epic sadface: Username is required` |
 
 The table is based on observed application behavior. `standard_user` was used as the representative login-enabled account for the negative credential checks, while `locked_out_user` was used for the locked-account condition.
+
+## 5. Error Guessing and Input Variations
+
+Additional input variations were explored using `standard_user` as the reference account.
+
+| Scenario | Test Input Variation | Observed Result |
+|---|---|---|
+| Leading space in username | ` standard_user` | Login denied with credential-mismatch message |
+| Trailing space in username | `standard_user ` | Login denied with credential-mismatch message |
+| Uppercase username | `STANDARD_USER` | Login denied with credential-mismatch message |
+| Leading space in password | ` secret_sauce` | Login denied with credential-mismatch message |
+| Trailing space in password | `secret_sauce ` | Login denied with credential-mismatch message |
+| Uppercase password | `SECRET_SAUCE` | Login denied with credential-mismatch message |
+| Very long username | 250-character username | Login denied with credential-mismatch message |
+| Very long password | 250-character password | Login denied with credential-mismatch message |
+
+For all eight scenarios, the application displayed:
+
+`Epic sadface: Username and password do not match any user in this service`
+
+### Observations
+
+- Leading and trailing spaces are not ignored during authentication.
+- Username matching appears to be case-sensitive.
+- Password matching appears to be case-sensitive.
+- Long input values are accepted by the fields but do not authenticate successfully.
+- No application error, crash, or unexpected validation behavior was observed during these checks.
+
+These scenarios are treated as negative testing and error guessing. They are not presented as Boundary Value Analysis because no documented or observable field-length boundary is available.
