@@ -79,5 +79,3 @@ The additional delay observed with `performance_glitch_user` is recorded as an o
 | R7 | No | N/A | No | N/A | N/A | Login is denied with `Epic sadface: Username is required` |
 
 The table is based on observed application behavior. `standard_user` was used as the representative login-enabled account for the negative credential checks, while `locked_out_user` was used for the locked-account condition.
-
-The decision table above is based on observed application behavior. Combinations that were not executed are not presented as confirmed behavior.
