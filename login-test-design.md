@@ -108,3 +108,61 @@ For all eight scenarios, the application displayed:
 - No application error, crash, or unexpected validation behavior was observed during these checks.
 
 These scenarios are treated as negative testing and error guessing. They are not presented as Boundary Value Analysis because no documented or observable field-length boundary is available.
+
+## 6. Exploratory Additions
+
+Two additional scenarios were added after exploratory checks identified useful authentication behavior that was not fully represented by the initial decision table and input-variation coverage.
+
+### 6.1 Direct access to a protected page while logged out
+
+When a logged-out user navigated directly to:
+
+`https://www.saucedemo.com/inventory.html`
+
+The application redirected the user to:
+
+`https://www.saucedemo.com/`
+
+and displayed:
+
+`Epic sadface: You can only access '/inventory.html' when you are logged in.`
+
+This behavior was formalized as **TC-20 — Unauthenticated user is redirected to Login when accessing Inventory directly**.
+
+### 6.2 Recovery after a failed login
+
+Using `standard_user` with an incorrect password produced the credential-mismatch error. After dismissing the error with the `X` control:
+
+- the error message was removed;
+- the entered username remained in the field;
+- the entered password remained in the field;
+- replacing the incorrect password with `secret_sauce` allowed the user to log in successfully without refreshing the page.
+
+This behavior was formalized as **TC-21 — User can recover from failed login after correcting the password**.
+
+These observations are recorded as application behavior. They are not presented as defects.
+
+## 7. Formal Execution Result
+
+The Authentication / Login suite was formally executed in Testiny on **21 August 2026** using the primary environment defined in the project test plan.
+
+| Metric | Result |
+|---|---:|
+| Test cases executed | 21 |
+| Passed | 21 |
+| Failed | 0 |
+| Blocked | 0 |
+| Skipped | 0 |
+| Not Run | 0 |
+| Pass rate | 100% |
+
+Selected execution evidence was captured for:
+
+- TC-1 — standard successful login;
+- TC-2 — locked-out account handling;
+- TC-7 — both required fields empty;
+- TC-20 — unauthenticated direct access to Inventory.
+
+No defect was raised from this execution because all 21 test cases matched their expected results.
+
+The complete project remains in progress. This result closes the Authentication / Login execution slice only; it does not represent completion of the full SauceDemo test scope.
