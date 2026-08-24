@@ -1,8 +1,8 @@
 # SauceDemo Functional QA — Test Plan
 
 **Author:** Oussama MAOUCHE  
-**Version:** 1.0  
-**Last updated:** 17 August 2026
+**Version:** 1.1  
+**Last updated:** 24 August 2026
 
 ## 1. Project Overview
 
@@ -166,7 +166,6 @@ The planned testing cycle can be considered complete when:
 - **Failed:** The actual result differs from the expected result and the behavior can be reproduced.
 - **Blocked:** The test cannot be completed because a required condition, dependency, or environment is unavailable.
 
-  
 ## 9. Defect Management
 
 A failed test will not automatically be considered a defect.
@@ -175,7 +174,7 @@ Before creating a defect, the unexpected behavior will be reproduced and checked
 
 Confirmed defects will be recorded in Jira and, where possible, linked to the related test case or test execution in Testiny.
 
-Each defect report should include:
+Each defect report should include, where relevant:
 
 - A clear and specific title
 - Test environment
@@ -183,9 +182,10 @@ Each defect report should include:
 - Steps to reproduce
 - Expected result
 - Actual result
-- Severity
 - Reproducibility
-- Screenshots or other useful evidence
+- User/business impact
+- Priority or severity only when justified by the project workflow
+- Screenshots, video, or other useful evidence
 
 If a reported issue can no longer be reproduced during the project, it will be reviewed and documented accordingly.
 
@@ -213,10 +213,10 @@ This project is performed against a public demonstration application and has sev
 
 - No formal business requirements or product specifications have been provided.
 - Expected behavior is derived from available UI cues, supplied demo data, and common e-commerce conventions. Where expected behavior is unclear, the finding will be documented as an observation rather than automatically reported as a defect.
-- Testing is performed as black-box testing without access to the source code, API, database, or server-side implementation.
+- Manual execution and defect decisions are performed using a black-box approach. Public source code or technical documentation may be consulted separately as secondary corroboration or investigation support, but they do not define expected behavior or determine whether an observed black-box failure is a defect.
 - The application may be changed or become temporarily unavailable without notice.
 - Testing is limited to one primary browser and desktop environment.
-- Some SauceDemo test accounts may intentionally demonstrate abnormal behavior. Such behavior will be documented carefully and will not automatically be presented as an unintended production defect.
+- Some SauceDemo test accounts may intentionally expose abnormal behavior because SauceDemo is a demo/training application. Confirmed black-box failures may still be documented as defects in this portfolio context, but they will not be misrepresented as production defects or client-reported issues.
 - No real customer data, payment information, or production systems are involved.
 
 These limitations will be considered when interpreting test results and writing the final test summary.
