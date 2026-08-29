@@ -31,7 +31,7 @@ See: [`docs/inventory-post-execution-review.md`](docs/inventory-post-execution-r
 
 - 10 focused Testiny cases covering `performance_glitch_user`, `error_user`, and `visual_user`
 - Formal execution completed and closed
-- 10 Failed confirmed defect-reproduction scenarios, each linked to its canonical Jira defect
+- 10 targeted defect-reproduction cases, all recorded as Failed and linked to their canonical Jira defects
 - Coverage includes response delays, sorting error handling, Product Details content, checkout input and validation, order completion, price consistency, image consistency, and Product Details cart actions
 
 This was a bounded defect-focused addendum rather than a full regression run for every account. Its failure count is not an overall product-quality score.
