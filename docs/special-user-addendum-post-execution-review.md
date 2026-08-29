@@ -53,7 +53,7 @@ The special accounts were used as targeted test data, not as a basis for assumin
 
 ## Automation decision
 
-No new early automation candidates were promoted from this addendum. These scenarios are mainly targeted reproductions of known abnormal behavior in a public demo environment.
+These addendum cases should stay manual for now. They mainly reproduce known abnormal behavior in a public demo environment.
 
 The first Playwright work should still focus on stable regression flows such as successful login, standard product browsing, sorting, Product Details consistency, and cart operations. The addendum cases remain useful for manual confirmation and defect traceability.
 
@@ -71,6 +71,6 @@ Some checkout failures were discovered while following the targeted `error_user`
 
 ## Conclusion
 
-The targeted special-user addendum is complete for the current portfolio scope. Ten reproducible defect scenarios are formally traceable from Testiny to Jira, additional affected-account evidence was consolidated without unnecessary duplicate tickets, and the stable baseline regression strategy remains unchanged.
+The targeted special-user addendum is complete for the current portfolio scope. Ten reproducible scenarios are traceable from Testiny to Jira. Evidence for additional affected accounts was added to existing defects instead of creating duplicate tickets. The stable baseline regression strategy is unchanged.
 
 The next manual QA checkpoint is Checkout / Order Flow.
