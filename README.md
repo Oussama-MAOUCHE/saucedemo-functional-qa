@@ -27,6 +27,17 @@ The Inventory run intentionally combines a stable baseline with defect-reproduct
 
 See: [`docs/inventory-post-execution-review.md`](docs/inventory-post-execution-review.md)
 
+### Targeted Special-User Addendum
+
+- 10 focused Testiny cases covering `performance_glitch_user`, `error_user`, and `visual_user`
+- Formal execution completed and closed
+- 10 Failed confirmed defect-reproduction scenarios, each linked to its canonical Jira defect
+- Coverage includes response delays, sorting error handling, Product Details content, checkout input and validation, order completion, price consistency, image consistency, and Product Details cart actions
+
+This was a bounded defect-focused addendum rather than a full regression run for every account. Its failure count is not an overall product-quality score.
+
+See: [`docs/special-user-addendum-post-execution-review.md`](docs/special-user-addendum-post-execution-review.md)
+
 ## Tools
 
 - Testiny — test case management and formal execution records
@@ -48,8 +59,9 @@ Completed checkpoints:
 
 - Authentication / Login
 - Inventory / Products
+- Targeted Special-User Addendum
 
-Next work will continue through the remaining high-value SauceDemo functional flows before targeted Playwright automation is introduced for stable regression scenarios.
+Next work will continue with Checkout / Order Flow and the remaining high-value SauceDemo functional flows before targeted Playwright automation is introduced for stable regression scenarios.
 
 ## Portfolio note
 
