@@ -1,94 +1,53 @@
 # SauceDemo Functional QA
 
-Manual functional QA portfolio project for the SauceDemo / Swag Labs web application.
+This repository documents a manual black-box QA cycle I carried out on SauceDemo, a public e-commerce demo application. I combined exploratory testing with structured test cases, formal execution in Testiny, and defect tracking in Jira.
 
-The project demonstrates a structured black-box testing workflow using risk-based test design, exploratory testing, formal test execution, defect reporting, and traceability across Testiny and Jira.
+The scope follows the main user journey: authentication, product browsing and cart behavior, checkout and order completion, and navigation/logout. I also used selected SauceDemo test accounts to investigate distinct failure patterns without repeating the full suite for every account.
 
-## Current coverage
+## Coverage at a glance
 
-### Authentication / Login
+| Area | Formal execution | Result | Review |
+|---|---:|---|---|
+| Authentication / Login | 21 cases | 21 Passed | [Post-execution review](docs/login-post-execution-review.md) |
+| Inventory / Products | 14 cases | 5 Passed, 9 Failed | [Post-execution review](docs/inventory-post-execution-review.md) |
+| Targeted Special-User Addendum | 10 cases | 10 Failed | [Post-execution review](docs/special-user-addendum-post-execution-review.md) |
+| Checkout / Order Flow | 9 cases | 8 Passed, 1 Failed | [Post-execution review](docs/checkout-order-flow-post-execution-review.md) |
+| Navigation / Logout | 3 cases | 2 Passed, 1 Failed | [Post-execution review](docs/navigation-logout-post-execution-review.md) |
 
-- 21 structured Testiny test cases
-- Formal execution completed and closed
-- 21 Passed, 0 Failed
-- Focused coverage of valid/invalid credentials, required fields, account states, input variations, protected-page access, and recovery after a failed login
+These results should not be read as an overall product-quality score. The Inventory run mixes a stable baseline with targeted defect-reproduction cases, and the Special-User Addendum was intentionally defect-focused.
 
-See: [`login-test-design.md`](login-test-design.md) and [`docs/login-post-execution-review.md`](docs/login-post-execution-review.md)
+## Work represented here
 
-### Inventory / Products
+- Risk-based manual functional testing of the main SauceDemo user flows.
+- Exploratory testing followed by focused formalization of reusable scenarios and confirmed defect reproductions.
+- Traceability between Testiny execution records and Jira defects without duplicating the same evidence across tools.
+- Black-box defect decisions based on observable behavior rather than assumed implementation intent.
+- Regression and automation-candidate decisions for stable, repeatable flows.
 
-- 14 structured Testiny test cases
-- Formal execution completed and closed
-- 5 Passed baseline scenarios for `standard_user`
-- 9 Failed targeted scenarios for `problem_user`
-- All nine failed executions linked to confirmed Jira defects with supporting evidence
+Key design and planning artifacts:
 
-The Inventory run intentionally combines a stable baseline with defect-reproduction scenarios, so its pass/fail ratio is not presented as an overall product-quality score.
+- [Test Plan](docs/test-plan.md)
+- [Login Test Design](login-test-design.md)
 
-See: [`docs/inventory-post-execution-review.md`](docs/inventory-post-execution-review.md)
+## Tools and environment
 
-### Targeted Special-User Addendum
-
-- 10 focused Testiny cases covering `performance_glitch_user`, `error_user`, and `visual_user`
-- Formal execution completed and closed
-- 10 targeted defect-reproduction cases, all recorded as Failed and linked to their canonical Jira defects
-- Coverage includes response delays, sorting error handling, Product Details content, checkout input and validation, order completion, price consistency, image consistency, and Product Details cart actions
-
-This was a bounded defect-focused addendum rather than a full regression run for every account. Its failure count is not an overall product-quality score.
-
-See: [`docs/special-user-addendum-post-execution-review.md`](docs/special-user-addendum-post-execution-review.md)
-
-### Checkout / Order Flow
-
-- 9 structured Testiny test cases
-- Formal execution completed and closed
-- 8 Passed `standard_user` baseline scenarios
-- 1 Failed targeted `problem_user` scenario linked to SDQA-22
-- Coverage includes order completion, required-field validation, cancellation and cart-state preservation, and PDF receipt generation
-
-No confirmed functional defect was found in the covered `standard_user` checkout baseline. The failed `problem_user` case documents a distinct Last Name input-routing problem that prevents checkout from continuing.
-
-See: [`docs/checkout-order-flow-post-execution-review.md`](docs/checkout-order-flow-post-execution-review.md)
-
-### Navigation / Logout
-
-- 3 structured Testiny test cases
-- Formal execution completed and closed
-- 2 Passed `standard_user` baseline scenarios
-- 1 Failed About-navigation scenario linked to SDQA-23
-- Coverage includes All Items navigation from Product Details and Logout from the authenticated Products page
-
-The Logout exploration also reconfirmed protected-page access control after the session ended; that behavior remains represented in the Authentication suite rather than duplicated here. `Reset App State` is explicitly outside this slice as a test-support utility.
-
-See: [`docs/navigation-logout-post-execution-review.md`](docs/navigation-logout-post-execution-review.md)
-
-## Tools
-
-- Testiny — test case management and formal execution records
-- Jira — confirmed defect tracking and evidence
-- GitHub — portfolio documentation and later automation/CI work
-- Firefox on Windows 11 — primary manual test environment
+| Tool / environment | Use in this project |
+|---|---|
+| Testiny | Test-case management and formal execution records |
+| Jira | Confirmed defect reports, relationships, and supporting evidence |
+| GitHub | Portfolio documentation and project reviews |
+| Firefox on Windows 11 | Primary manual test environment |
 
 ## Test approach
 
-Testing is performed manually using a risk-based functional approach. Expected behavior is derived from observable UI behavior, available user-facing information, internal consistency, and defensible functional expectations.
+Testing was manual, risk-based, and black-box, using both scripted and exploratory work. Where no formal requirement was available, expected behavior was based on visible UI cues, supplied demo data, consistency across the application, and common e-commerce behavior. Ambiguous findings were kept as observations rather than being forced into defect reports.
 
-Manual black-box execution is authoritative for defect decisions. Public source code or technical material may be used only as secondary corroboration and does not define expected behavior or invalidate an observed defect.
+Public source code or implementation details were not used to override the observed behavior of the application. The full scope, test types, limitations, and defect-management rules are documented in the [Test Plan](docs/test-plan.md).
 
-See the full [`Test Plan`](docs/test-plan.md).
+## Current status
 
-## Project status
-
-Completed checkpoints:
-
-- Authentication / Login
-- Inventory / Products
-- Targeted Special-User Addendum
-- Checkout / Order Flow
-- Navigation / Logout
-
-The next step is a portfolio-wide manual-scope closure review: reconcile the completed checkpoints against the Test Plan, confirm any remaining functional gaps or explicit exclusions, and prepare the final manual QA summary before starting targeted Playwright regression automation.
+The planned risk-based manual functional scope is complete. The repository is now going through a staged portfolio audit before the consolidated regression checklist and final manual QA summary are added. Targeted Playwright automation will follow for selected stable regression scenarios.
 
 ## Portfolio note
 
-This is an independent QA portfolio project. Sauce Labs is not a client and did not commission this testing work. SauceDemo is a public demonstration/training application, and some provided test accounts intentionally expose abnormal behavior.
+This is an independent QA portfolio project. Sauce Labs is not a client and did not commission this work. SauceDemo is a public demonstration/training application, and some provided test accounts intentionally expose abnormal behavior. Findings are documented as black-box portfolio results, not as production issues discovered on a client system.
