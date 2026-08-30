@@ -1,28 +1,29 @@
 # SauceDemo Functional QA — Test Plan
 
 **Author:** Oussama MAOUCHE  
-**Version:** 1.1  
-**Last updated:** 24 August 2026
+**Version:** 1.2  
+**Last updated:** 30 August 2026  
+**Document status:** Manual execution complete; final reporting and portfolio audit in progress
 
 ## 1. Project Overview
 
-This project covers manual functional testing of the SauceDemo (Swag Labs) web application.
+This plan defines the manual functional testing scope for the SauceDemo (Swag Labs) web application.
 
-The purpose of the project is to validate the application's main user workflows, document test execution results, identify reproducible functional defects, and maintain a structured and traceable manual QA process.
+The project focuses on the application's main user workflows, reproducible functional defects, and traceable QA documentation across Testiny, Jira, and GitHub.
 
 Application under test: https://www.saucedemo.com/
 
 ## 2. Test Objectives
 
-The objectives of this testing effort are to :
+The objectives are to:
 
-- Verify that the main user workflows behave as expected.
-- Validate positive and negative user scenarios.
-- Apply structured test design techniques to the authentication module.
-- Verify shopping cart and checkout behavior.
+- Verify the main user workflows.
+- Cover positive and negative functional scenarios.
+- Apply structured test design techniques in greater depth to Authentication / Login.
+- Verify shopping cart, checkout, and order-completion behavior.
 - Identify and document reproducible functional defects.
-- Perform retesting and basic regression testing where applicable.
-- Produce clear and traceable test documentation.
+- Perform confirmation testing and targeted regression where applicable.
+- Maintain clear traceability between test design, execution results, and confirmed defects.
 
 ## 3. Scope
 
@@ -43,21 +44,19 @@ The objectives of this testing effort are to :
 
 - API and backend testing
 - Database testing
-- Test automation
+- Test automation during the manual testing phase
 - Performance and load testing
 - Security penetration testing
 - Formal accessibility testing / WCAG audit
 - Cross-browser and cross-device testing
 - Real payment processing
-- Systems or services outside SauceDemo
+- External systems or services beyond the visible result of an in-app navigation action
 
 ## 4. Test Approach
 
-Testing will be performed manually using a risk-based and structured functional testing approach.
+Testing is manual and black-box, combining structured test cases with exploratory testing. Effort is prioritized according to risk and importance within the main user journey.
 
-The authentication module will receive deeper coverage so that multiple test design techniques can be applied in a focused area. Other application areas will receive focused functional coverage based on their importance within the main user journey.
-
-Testing will include both scripted test cases and exploratory testing.
+Authentication / Login receives deeper coverage so that multiple test design techniques can be applied in one focused area. Other modules receive targeted functional coverage proportionate to their role in the end-to-end flow.
 
 ### Test Types
 
@@ -70,18 +69,18 @@ Testing will include both scripted test cases and exploratory testing.
 
 ### Test Design Techniques
 
-The following techniques will be applied where relevant :
+The following techniques are used where relevant:
 
 - Equivalence Partitioning
 - Boundary Value Analysis
 - Decision Table Testing
 - Error Guessing
 
-Boundary Value Analysis will only be used where an actual or observable boundary exists. No undocumented field limits will be assumed.
+Boundary Value Analysis is used only when an actual or observable boundary exists. Undocumented field limits are not assumed.
 
 ### Risk Focus and Test Priorities
 
-Testing effort will be prioritized according to the impact of each function on the main user journey.
+Testing effort is prioritized according to the impact of each function on the main user journey.
 
 **High priority:**
 - Authentication
@@ -96,23 +95,24 @@ Testing effort will be prioritized according to the impact of each function on t
 - Navigation
 - Logout
 
-Authentication will receive additional depth as a focused test-design exercise, while cart and checkout flows remain critical from a user-journey perspective.
+Authentication receives additional depth as a focused test-design exercise, while cart and checkout remain critical to the main shopping flow.
 
 ### Authentication Deep-Dive
 
-The Login functionality will receive extended coverage compared with the other modules.
+The Login functionality receives extended coverage compared with the other modules.
 
-Testing will include :
+Coverage includes:
 
 - Valid and invalid credential combinations
 - Empty mandatory fields
 - Input variations
 - Error-message behavior
-- User/account states available in the application
-- Session and logout behavior
+- Available user/account states
+- Protected-page access while logged out
+- Recovery after a failed login
 - Exploratory authentication scenarios
 
-The Login functionality receives deeper coverage because it provides a focused area for applying multiple test design techniques, input variations, and user-state scenarios.
+Logout is covered separately under the Navigation / Logout scope.
 
 ## 5. Test Environment
 
@@ -125,24 +125,24 @@ The Login functionality receives deeper coverage because it provides a focused a
 
 ### Client Environment
 
-- Operating system : Windows 11
-- Browser : Firefox
-- Browser version : 153.0.4 (64 bits)
-- Screen resolution : 1920 x 1080
+- Operating system: Windows 11
+- Browser: Firefox
+- Browser version: 153.0.4 (64-bit)
+- Screen resolution: 1920 x 1080
 
-Testing for this project will be performed on one primary browser and environment. Cross-browser and cross-device compatibility testing are outside the current scope.
+Testing is limited to one primary desktop browser and environment. Cross-browser and cross-device compatibility are outside the current manual scope.
 
 ### Test Data
 
 - Public demo accounts and credentials provided by the application
 - Synthetic checkout information created only for testing
-- No real personal, customer, or payment data will be used
+- No real personal, customer, or payment data
 
 ## 6. Entry Criteria
 
-Testing can begin when :
+Testing can begin when:
 
-- The SauceDemo application is accessible.
+- SauceDemo is accessible.
 - Valid test credentials are available.
 - The selected test environment is operational.
 - The test scope has been defined.
@@ -155,71 +155,78 @@ The planned testing cycle can be considered complete when:
 - All planned test cases have been executed.
 - Critical user workflows have been covered.
 - Failed tests have been reviewed and reproducible defects documented.
-- Retesting has been performed where applicable.
-- Basic regression testing has been completed after relevant changes or retesting.
+- Confirmation testing has been performed where applicable.
+- Targeted regression has been completed where relevant.
 - Test execution results have been recorded.
 - A final test summary has been prepared.
+
+**Current status:** the planned manual functional execution is complete. The consolidated regression checklist and final manual QA summary are still being prepared, so the wider documentation milestone remains open.
 
 ## 8. Test Result Criteria
 
 - **Passed:** The actual result matches the expected result.
 - **Failed:** The actual result differs from the expected result and the behavior can be reproduced.
 - **Blocked:** The test cannot be completed because a required condition, dependency, or environment is unavailable.
+- **Skipped:** The test is intentionally not executed for the current run.
+- **Not Run:** No execution result has yet been recorded for the test.
+
+A failed test is reviewed before it is classified as a confirmed defect.
 
 ## 9. Defect Management
 
-A failed test will not automatically be considered a defect.
+Unexpected behavior is reproduced and compared with the expected behavior before a Jira defect is created.
 
-Before creating a defect, the unexpected behavior will be reproduced and checked against the expected behavior of the application.
+Confirmed defects are recorded in Jira and, where relevant, linked to the related Testiny execution.
 
-Confirmed defects will be recorded in Jira and, where possible, linked to the related test case or test execution in Testiny.
-
-Each defect report should include, where relevant:
+A defect report should include, where applicable:
 
 - A clear and specific title
 - Test environment
+- Relevant test data
 - Preconditions
 - Steps to reproduce
 - Expected result
 - Actual result
 - Reproducibility
 - User/business impact
-- Priority or severity only when justified by the project workflow
+- Priority only when justified by the project workflow
 - Screenshots, video, or other useful evidence
 
-If a reported issue can no longer be reproduced during the project, it will be reviewed and documented accordingly.
+If a reported behavior can no longer be reproduced, it is reviewed and documented rather than silently removed.
 
-## 10. Test Deliverables
+## 10. Test Deliverables and Tool Roles
 
-The project will produce the following testing artifacts:
+The manual QA phase produces:
 
 - Test Plan
 - Test Cases
 - Test Execution Results
 - Defect Reports
-- Supporting Screenshots and Evidence
+- Selected supporting evidence
 - Regression Checklist
-- Final Test Summary Report
+- Final Manual QA Summary
 
-Test cases and execution results will be managed in Testiny.
+Tool responsibilities are kept separate:
 
-Confirmed defects will be tracked in Jira.
+- **Testiny:** test cases and formal execution records
+- **Jira:** confirmed defect reports, relationships, and detailed evidence
+- **GitHub:** portfolio-facing planning, design, post-execution reviews, and final QA documentation
 
-Final portfolio documentation and selected test evidence will be stored in the GitHub project repository.
+Detailed Jira or Testiny records are not duplicated in GitHub unless they add clear portfolio value.
 
 ## 11. Risks and Limitations
 
 This project is performed against a public demonstration application and has several limitations:
 
-- No formal business requirements or product specifications have been provided.
-- Expected behavior is derived from available UI cues, supplied demo data, and common e-commerce conventions. Where expected behavior is unclear, the finding will be documented as an observation rather than automatically reported as a defect.
-- Manual execution and defect decisions are performed using a black-box approach. Public source code or technical documentation may be consulted separately as secondary corroboration or investigation support, but they do not define expected behavior or determine whether an observed black-box failure is a defect.
-- The application may be changed or become temporarily unavailable without notice.
-- Testing is limited to one primary browser and desktop environment.
-- Some SauceDemo test accounts may intentionally expose abnormal behavior because SauceDemo is a demo/training application. Confirmed black-box failures may still be documented as defects in this portfolio context, but they will not be misrepresented as production defects or client-reported issues.
+- No formal business requirements or product specifications were provided.
+- Expected behavior is derived from visible UI cues, supplied demo data, internal consistency, and common e-commerce behavior. If expected behavior cannot be established confidently, the finding remains an observation rather than being forced into a defect report.
+- Manual execution and defect decisions follow a black-box approach. Public source code or technical material may be consulted only as secondary investigation support; it does not override observed application behavior or define expected behavior.
+- The public demo application may change or become temporarily unavailable without notice.
+- Testing is limited to one primary desktop browser and environment.
+- Some provided test accounts may intentionally expose abnormal behavior. Reproducible black-box failures can still be documented in this portfolio, but they are not presented as production defects or client-reported issues.
 - No real customer data, payment information, or production systems are involved.
 
-These limitations will be considered when interpreting test results and writing the final test summary.
+These limitations must be considered when interpreting the results and the final QA summary.
 
 ## 12. Project Ownership
 
