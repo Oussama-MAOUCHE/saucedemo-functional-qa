@@ -94,13 +94,7 @@ TC-74 reproduces known demo-specific abnormal behavior. TC-75 is valid automatio
 
 ## Residual risk
 
-This checkpoint does not establish correctness outside the tested Checkout scope. Remaining risks include:
-
-- Navigation and Logout behavior;
-- account-specific behavior outside the targeted scenarios already documented;
-- cross-browser and cross-device compatibility;
-- formal accessibility, security, performance, API, database, and backend behavior;
-- undocumented input limits or business rules that cannot be inferred defensibly from the public UI.
+This checkpoint does not establish correctness outside the tested Checkout scope. Remaining project-level risks include account-specific behavior outside the targeted scenarios already documented, cross-browser and cross-device compatibility, and the formal accessibility, security, performance, API, database, and backend areas excluded by the Test Plan.
 
 No real payment processing or customer data is involved in this public demonstration environment.
 
@@ -108,4 +102,4 @@ No real payment processing or customer data is involved in this public demonstra
 
 The Checkout / Order Flow slice is complete for the current manual functional-testing scope. The `standard_user` baseline covers the main completion, validation, cancellation, state-preservation, and receipt paths, while the distinct `problem_user` Last Name failure is traceable from Testiny to Jira.
 
-The next manual QA checkpoint is Navigation / Logout.
+Navigation / Logout was completed later as a separate checkpoint; see [`navigation-logout-post-execution-review.md`](navigation-logout-post-execution-review.md).
