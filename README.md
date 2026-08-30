@@ -27,7 +27,7 @@ These results should not be read as an overall product-quality score. The Invent
 Key design and planning artifacts:
 
 - [Test Plan](docs/test-plan.md)
-- [Login Test Design](login-test-design.md)
+- [Login Test Design](docs/login-test-design.md)
 
 ## Tools and environment
 
