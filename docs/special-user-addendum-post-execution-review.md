@@ -55,22 +55,22 @@ The special accounts were used as targeted test data, not as a basis for assumin
 
 These addendum cases should stay manual for now. They mainly reproduce known abnormal behavior in a public demo environment.
 
-The first Playwright work should still focus on stable regression flows such as successful login, standard product browsing, sorting, Product Details consistency, and cart operations. The addendum cases remain useful for manual confirmation and defect traceability.
+The first Playwright work should still focus on stable regression flows such as successful login, standard product browsing, sorting, Product Details consistency, cart operations, and the stable Checkout baseline. The addendum cases remain useful for manual confirmation and defect traceability.
 
 ## Residual risk
 
 This addendum was deliberately bounded. It does not represent exhaustive account-by-account regression and does not establish correctness for:
 
-- the complete Checkout / Order Flow;
 - Navigation and Logout;
+- account-specific behavior outside the targeted scenarios;
 - cross-browser or cross-device behavior;
 - accessibility, security, API, database, or backend behavior;
 - formal performance or load characteristics.
 
-Some checkout failures were discovered while following the targeted `error_user` flow, but the main Checkout / Order Flow slice is still a separate checkpoint and remains to be completed.
+Some Checkout failures were discovered during the targeted `error_user` flow. They were formalized here without replacing the broader Checkout baseline, which was completed later as a separate checkpoint.
+
+See: [`checkout-order-flow-post-execution-review.md`](checkout-order-flow-post-execution-review.md)
 
 ## Conclusion
 
-The targeted special-user addendum is complete for the current portfolio scope. Ten reproducible scenarios are traceable from Testiny to Jira. Evidence for additional affected accounts was added to existing defects instead of creating duplicate tickets. The stable baseline regression strategy is unchanged.
-
-The next manual QA checkpoint is Checkout / Order Flow.
+The targeted special-user addendum is complete for the current portfolio scope. Ten reproducible scenarios are traceable from Testiny to Jira. Evidence for additional affected accounts was added to existing defects instead of creating duplicate tickets, and the stable baseline regression strategy remains separate from these defect-focused scenarios.
