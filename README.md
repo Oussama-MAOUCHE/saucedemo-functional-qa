@@ -50,6 +50,18 @@ No confirmed functional defect was found in the covered `standard_user` checkout
 
 See: [`docs/checkout-order-flow-post-execution-review.md`](docs/checkout-order-flow-post-execution-review.md)
 
+### Navigation / Logout
+
+- 3 structured Testiny test cases
+- Formal execution completed and closed
+- 2 Passed `standard_user` baseline scenarios
+- 1 Failed About-navigation scenario linked to SDQA-23
+- Coverage includes All Items navigation from Product Details and Logout from the authenticated Products page
+
+The Logout exploration also reconfirmed protected-page access control after the session ended; that behavior remains represented in the Authentication suite rather than duplicated here. `Reset App State` is explicitly outside this slice as a test-support utility.
+
+See: [`docs/navigation-logout-post-execution-review.md`](docs/navigation-logout-post-execution-review.md)
+
 ## Tools
 
 - Testiny — test case management and formal execution records
@@ -73,8 +85,9 @@ Completed checkpoints:
 - Inventory / Products
 - Targeted Special-User Addendum
 - Checkout / Order Flow
+- Navigation / Logout
 
-Next work will continue with Navigation / Logout and the remaining high-value SauceDemo functional flows before targeted Playwright automation is introduced for stable regression scenarios.
+The next step is a portfolio-wide manual-scope closure review: reconcile the completed checkpoints against the Test Plan, confirm any remaining functional gaps or explicit exclusions, and prepare the final manual QA summary before starting targeted Playwright regression automation.
 
 ## Portfolio note
 
