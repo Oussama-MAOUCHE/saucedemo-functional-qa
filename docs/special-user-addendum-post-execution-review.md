@@ -55,13 +55,12 @@ The special accounts were used as targeted test data, not as a basis for assumin
 
 These addendum cases should stay manual for now. They mainly reproduce known abnormal behavior in a public demo environment.
 
-The first Playwright work should still focus on stable regression flows such as successful login, standard product browsing, sorting, Product Details consistency, cart operations, and the stable Checkout baseline. The addendum cases remain useful for manual confirmation and defect traceability.
+The first Playwright work should still focus on stable regression flows such as successful login, standard product browsing, sorting, Product Details consistency, cart operations, the stable Checkout baseline, and Logout. The addendum cases remain useful for manual confirmation and defect traceability.
 
 ## Residual risk
 
 This addendum was deliberately bounded. It does not represent exhaustive account-by-account regression and does not establish correctness for:
 
-- Navigation and Logout;
 - account-specific behavior outside the targeted scenarios;
 - cross-browser or cross-device behavior;
 - accessibility, security, API, database, or backend behavior;
@@ -70,6 +69,8 @@ This addendum was deliberately bounded. It does not represent exhaustive account
 Some Checkout failures were discovered during the targeted `error_user` flow. They were formalized here without replacing the broader Checkout baseline, which was completed later as a separate checkpoint.
 
 See: [`checkout-order-flow-post-execution-review.md`](checkout-order-flow-post-execution-review.md)
+
+Navigation / Logout was also completed separately after this addendum; see [`navigation-logout-post-execution-review.md`](navigation-logout-post-execution-review.md).
 
 ## Conclusion
 
