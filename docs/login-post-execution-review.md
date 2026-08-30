@@ -2,86 +2,104 @@
 
 ## Execution checkpoint
 
-The Authentication / Login test suite was executed in Testiny on 21 August 2026.
+The Authentication / Login suite was formally executed in Testiny on **21 August 2026** in the primary environment defined in the Test Plan.
 
-- Total test cases: 21
-- Passed: 21
-- Failed: 0
-- Blocked: 0
-- Skipped: 0
-- Pass rate: 100%
+- Test run: `TR-1 — SauceDemo - Authentication / Login - Initial Execution - 21-08-2026`
 
-No defect was created from this run because the observed results matched the expected results for all executed test cases.
+| Result | Count |
+|---|---:|
+| Passed | 21 |
+| Failed | 0 |
+| Blocked | 0 |
+| Skipped | 0 |
+| Not Run | 0 |
 
-## Selected portfolio evidence
+All 21 recorded cases matched their expected results, so no Jira defect was created from TR-1.
 
-Evidence was intentionally kept selective rather than capturing every passing test.
+The suite covered valid and invalid credentials, required-field validation, account states, input variations, direct access to a protected page while logged out, and recovery after a failed login.
 
-- TC-1 — successful login with `standard_user`
-- TC-2 — locked-out account handling
-- TC-7 — validation when both credential fields are empty
-- TC-20 — direct access to a protected Inventory URL while logged out
+## Selected execution evidence
 
-The full Testiny execution report is retained as the formal execution artifact.
+Evidence was kept selective rather than attached to every passing case.
+
+Representative evidence was retained for:
+
+- TC-1 — successful login with `standard_user`;
+- TC-2 — locked-out account handling;
+- TC-7 — both credential fields empty;
+- TC-20 — direct access to Inventory while logged out.
+
+The closed Testiny run remains the formal execution record.
+
+## Interpretation of the result
+
+TR-1 establishes a working authentication baseline for the scenarios included in this slice. It does not establish performance, security, backend, cross-browser, or cross-device correctness.
+
+One later finding is important for context: `performance_glitch_user` authenticated successfully in TR-1, so the related Login case correctly remained **Passed**. The visible delay associated with that account was investigated later in the Targeted Special-User Addendum and formalized separately as **SDQA-10**.
+
+That later responsiveness finding does not change the recorded TR-1 authentication result.
 
 ## Regression focus
 
-A compact Authentication / Login regression set should prioritize the behaviors most likely to affect access to the application or prevent a user from continuing the main journey.
+For a compact Authentication / Login regression set, the highest-value checks are:
 
-Recommended regression checks:
-
-1. Valid `standard_user` login reaches the Products page.
-2. `locked_out_user` is denied with the expected locked-account message.
-3. Valid username with incorrect password is denied.
-4. Missing username is rejected with the required-username message.
-5. Missing password is rejected with the required-password message.
-6. Direct access to `/inventory.html` while logged out is denied and redirected to Login.
+1. `standard_user` can log in and reach the Products page.
+2. `locked_out_user` is denied with the locked-account message.
+3. A valid username with an incorrect password is denied.
+4. Missing Username is rejected.
+5. Missing Password is rejected.
+6. Direct access to `/inventory.html` while logged out is denied.
 7. A user can recover from a failed login by correcting the password without refreshing the page.
 
-The remaining input-variation and special-account cases remain useful for broader functional coverage and targeted regression when authentication behavior changes.
+The remaining whitespace, case-sensitivity, long-input, and additional-account scenarios are still useful for broader functional coverage when authentication behavior changes.
 
-## Automation candidate classification
+## Automation candidates
 
-The suite was reviewed using four categories: Keep Manual, Automate Soon, High-Value Regression Automation, and Not Worth Automating Yet.
+### First regression candidates
 
-### High-Value Regression Automation
-
-- TC-1 — standard successful login
+- TC-1 — successful `standard_user` login
 - TC-2 — locked-out account
 - TC-3 — valid username with incorrect password
-- TC-5 — missing username
-- TC-6 — missing password
-- TC-20 — unauthenticated direct access to Inventory
+- TC-5 — missing Username
+- TC-6 — missing Password
+- TC-20 — protected Inventory access while logged out
 
-These cases are stable, deterministic, business-relevant, and inexpensive to validate repeatedly. They are strong first candidates for Playwright automation once automation work begins.
+These cases are stable, deterministic, and central to authenticated access, making them suitable for an initial Playwright regression slice.
 
-### Automate Soon
+### Add after the core set
 
 - TC-4 — unrecognized username
-- TC-7 — both fields empty
-- TC-8 — username case sensitivity
-- TC-9 — password case sensitivity
-- TC-10 to TC-13 — leading/trailing whitespace handling
-- TC-16 to TC-19 — successful authentication for the additional documented account types
+- TC-7 — both credential fields empty
+- TC-8 and TC-9 — username/password case sensitivity
+- TC-10 to TC-13 — leading/trailing whitespace
+- TC-16 to TC-19 — additional documented account types
 - TC-21 — recovery after correcting a failed login
 
-These cases are repeatable and automatable, but they provide less incremental value than the high-value regression set for an initial automation slice.
-
-### Keep Manual
+### Keep manual for now
 
 - TC-14 — very long username
 - TC-15 — very long password
 
-These robustness checks are useful during exploratory or targeted validation, but they are lower priority for early automation because no documented field-length boundary exists and the current value is mainly defensive exploration.
+These remain useful robustness checks, but they are lower-value early automation candidates because no field-length boundary was documented or observable.
 
-### Not Worth Automating Yet
-
-None of the current 21 cases needs to be permanently excluded from automation. The distinction is priority, not feasibility. The first automation slice should remain intentionally small and focus on the highest-value authentication regression behaviors.
+This classification is about automation priority, not technical feasibility.
 
 ## Residual risk
 
-The Authentication / Login slice passed in the primary test environment, but this does not establish cross-browser, cross-device, performance, security, or backend correctness. Those areas remain outside the current project scope unless the test plan is explicitly expanded.
+The Login slice was executed in one primary desktop browser and environment. The result does not cover:
+
+- cross-browser or cross-device compatibility;
+- formal performance/load behavior;
+- security testing;
+- API, database, or backend correctness;
+- undocumented authentication rules that cannot be established from the public interface.
+
+## Related documents
+
+- [Authentication / Login — Test Design](login-test-design.md)
+- [Test Plan](test-plan.md)
+- [Targeted Special-User Addendum](special-user-addendum-post-execution-review.md)
 
 ## Conclusion
 
-The Authentication / Login slice is complete for the current manual functional-testing scope. The project should now move to the next SauceDemo functional area rather than expanding Login coverage for its own sake.
+The Authentication / Login slice is complete for the planned manual functional scope. TR-1 provides a clean baseline for core authentication behavior, while later account-specific findings remain separated into their own targeted investigations instead of being retroactively folded into this run.
