@@ -38,6 +38,18 @@ This was a bounded defect-focused addendum rather than a full regression run for
 
 See: [`docs/special-user-addendum-post-execution-review.md`](docs/special-user-addendum-post-execution-review.md)
 
+### Checkout / Order Flow
+
+- 9 structured Testiny test cases
+- Formal execution completed and closed
+- 8 Passed `standard_user` baseline scenarios
+- 1 Failed targeted `problem_user` scenario linked to SDQA-22
+- Coverage includes order completion, required-field validation, cancellation and cart-state preservation, and PDF receipt generation
+
+No confirmed functional defect was found in the covered `standard_user` checkout baseline. The failed `problem_user` case documents a distinct Last Name input-routing problem that prevents checkout from continuing.
+
+See: [`docs/checkout-order-flow-post-execution-review.md`](docs/checkout-order-flow-post-execution-review.md)
+
 ## Tools
 
 - Testiny — test case management and formal execution records
@@ -60,8 +72,9 @@ Completed checkpoints:
 - Authentication / Login
 - Inventory / Products
 - Targeted Special-User Addendum
+- Checkout / Order Flow
 
-Next work will continue with Checkout / Order Flow and the remaining high-value SauceDemo functional flows before targeted Playwright automation is introduced for stable regression scenarios.
+Next work will continue with Navigation / Logout and the remaining high-value SauceDemo functional flows before targeted Playwright automation is introduced for stable regression scenarios.
 
 ## Portfolio note
 
