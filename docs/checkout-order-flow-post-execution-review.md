@@ -52,11 +52,7 @@ The `problem_user` behavior is also kept separate from the `error_user` Last Nam
 
 ## Evidence and traceability
 
-Testiny keeps the formal execution result, the concise Actual comment for TC-74, and the link to SDQA-22. Jira remains the detailed defect record, including reproduction information, impact, relationships, and supporting evidence.
-
-The previously formalized `error_user` Checkout findings remain in the separate TR-3 addendum and are not duplicated in this Checkout run.
-
-GitHub keeps the portfolio-level interpretation rather than copying the full Testiny or Jira records.
+Testiny keeps the formal result and Jira link for TC-74, while Jira remains the detailed defect record. Previously formalized `error_user` Checkout findings remain in TR-3 and are not duplicated in this run.
 
 ## Regression focus
 
@@ -70,7 +66,7 @@ A compact Checkout regression set should prioritize:
 6. completion-state behavior, including the cleared cart badge and return to Products;
 7. PDF receipt generation and consistency with the completed order.
 
-The `problem_user` case remains useful for targeted confirmation of SDQA-22, but it should not replace the stable `standard_user` regression baseline.
+The `problem_user` case remains useful for targeted confirmation of SDQA-22, but it does not replace the stable `standard_user` regression baseline.
 
 ## Automation candidates
 
@@ -95,23 +91,11 @@ These are stable state-preservation checks and are suitable once the core comple
 
 TC-74 reproduces known demo-specific abnormal behavior. TC-75 is also automatable, but download handling and document-content assertions are lower priority than the core browser regression flow at this stage.
 
-This is an automation-priority decision, not a statement that these cases cannot be automated.
-
 ## Scope and residual risk
 
-This checkpoint is limited to the planned Checkout / Order Flow functional scope. It does not cover:
+This checkpoint covers the planned Checkout / Order Flow functional scope only. Broader project-level limits — cross-browser/device compatibility, formal accessibility, performance/load, security penetration testing, API/backend testing, database testing, undocumented business rules, and real payment processing — are documented in the [Test Plan](test-plan.md).
 
-- cross-browser or cross-device compatibility;
-- formal accessibility testing;
-- performance and load testing;
-- security penetration testing;
-- API/backend testing;
-- database testing;
-- undocumented business rules that cannot be established from the public interface.
-
-No real payment processing or customer data is involved in this public demonstration environment.
-
-Navigation / Logout was completed later as a separate checkpoint rather than being folded into this review.
+No real customer data or payment information was used. Navigation / Logout was completed separately.
 
 ## Related documents
 
@@ -121,4 +105,4 @@ Navigation / Logout was completed later as a separate checkpoint rather than bei
 
 ## Conclusion
 
-The Checkout / Order Flow checkpoint is complete for the planned manual functional scope. TR-4 provides a working `standard_user` checkout baseline and a traceable `problem_user` failure in SDQA-22, while previously documented special-user Checkout defects remain separated in their own targeted run.
+TR-4 establishes a working `standard_user` checkout baseline and keeps the distinct `problem_user` input-routing failure traceable through SDQA-22. Earlier special-account Checkout findings remain in their own targeted run.
