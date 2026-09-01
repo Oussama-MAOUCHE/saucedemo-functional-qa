@@ -107,9 +107,10 @@ Project-level limitations still include:
 
 - cross-browser and cross-device compatibility;
 - formal accessibility testing;
-- formal performance/load testing;
-- security testing;
-- API, database, and backend correctness;
+- performance and load testing;
+- security penetration testing;
+- API/backend testing;
+- database testing;
 - undocumented business rules that cannot be established from the public interface.
 
 SauceDemo is a public demonstration/training application. These findings are documented as black-box portfolio results, not as production defects discovered for a client.
