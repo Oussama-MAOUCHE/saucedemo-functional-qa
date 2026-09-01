@@ -99,13 +99,14 @@ This is an automation-priority decision, not a statement that these cases cannot
 
 ## Scope and residual risk
 
-This checkpoint is limited to the planned Checkout / Order Flow functional scope. It does not establish:
+This checkpoint is limited to the planned Checkout / Order Flow functional scope. It does not cover:
 
 - cross-browser or cross-device compatibility;
-- formal accessibility behavior;
-- formal performance/load characteristics;
-- security correctness;
-- API, database, or backend behavior;
+- formal accessibility testing;
+- performance and load testing;
+- security penetration testing;
+- API/backend testing;
+- database testing;
 - undocumented business rules that cannot be established from the public interface.
 
 No real payment processing or customer data is involved in this public demonstration environment.
