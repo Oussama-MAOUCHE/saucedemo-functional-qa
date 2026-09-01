@@ -16,6 +16,8 @@ The scope follows the main user journey: authentication, product browsing and ca
 
 These results should not be read as an overall product-quality score. The Inventory run mixes a stable baseline with targeted defect-reproduction cases, and the Special-User Addendum was intentionally defect-focused.
 
+Shopping Cart coverage is distributed across the Inventory / Products and Checkout / Order Flow checkpoints rather than represented by a separate standalone run.
+
 ## Work represented here
 
 - Risk-based manual functional testing of the main SauceDemo user flows.
