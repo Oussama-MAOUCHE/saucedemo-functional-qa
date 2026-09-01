@@ -20,9 +20,7 @@ The suite covered valid and invalid credentials, required-field validation, acco
 
 ## Selected execution evidence
 
-Evidence was kept selective rather than attached to every passing case.
-
-Representative evidence was retained for:
+Evidence was kept selective rather than attached to every passing case. Representative evidence was retained for:
 
 - TC-1 — successful login with `standard_user`;
 - TC-2 — locked-out account handling;
@@ -82,19 +80,9 @@ These cases are stable, deterministic, and central to authenticated access, maki
 
 These remain useful robustness checks, but they are lower-value early automation candidates because no field-length boundary was documented or observable.
 
-This classification is about automation priority, not technical feasibility.
-
 ## Residual risk
 
-The Login slice was executed in one primary desktop browser and environment. The result does not cover:
-
-- cross-browser or cross-device compatibility;
-- formal accessibility testing;
-- performance and load testing;
-- security penetration testing;
-- API/backend testing;
-- database testing;
-- undocumented authentication rules that cannot be established from the public interface.
+This slice was executed in one primary desktop browser and environment. Broader project-level limits — including cross-browser/device compatibility, formal accessibility, performance/load, security penetration testing, API/backend testing, database testing, and undocumented authentication rules — remain outside this checkpoint and are documented in the [Test Plan](test-plan.md).
 
 ## Related documents
 
@@ -104,4 +92,4 @@ The Login slice was executed in one primary desktop browser and environment. The
 
 ## Conclusion
 
-The Authentication / Login slice is complete for the planned manual functional scope. TR-1 provides a clean baseline for core authentication behavior, while later account-specific findings remain separated into their own targeted investigations instead of being retroactively folded into this run.
+TR-1 closes the planned manual Authentication / Login slice with a clean baseline for the covered scenarios. Later account-specific responsiveness findings remain in their targeted follow-up instead of altering the original authentication result.
