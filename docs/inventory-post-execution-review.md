@@ -27,7 +27,7 @@ The five formal baseline cases passed and covered:
 - removing an added product from Products;
 - adding and removing a product from Product Details.
 
-The broader baseline exploration also checked Cart data consistency, **Back to Products** / **Continue Shopping** navigation, and Cart-state persistence through navigation and page refresh. These exploratory checks are not included in the 14-case TR-2 count.
+The broader baseline exploration also checked Cart data consistency, **Back to products** / **Continue Shopping** navigation, and Cart-state persistence through navigation and page refresh. These exploratory checks are not included in the 14-case TR-2 count.
 
 No confirmed functional defect was found for `standard_user` within this Inventory / Products scope.
 
