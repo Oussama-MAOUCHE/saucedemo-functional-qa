@@ -69,24 +69,15 @@ The addendum was intentionally bounded: once the distinct confirmed failure patt
 
 ## Automation priority
 
-These 10 cases stay manual for now because they mainly reproduce known demo-specific failures.
+These 10 cases stay manual for now because they mainly reproduce known demo-specific failures. The first Playwright work should focus instead on stable regression behavior: successful Login, product browsing and sorting, Product Details consistency, cart operations, the stable Checkout flow, and Logout.
 
-The first Playwright work should focus on stable regression behavior instead: successful Login, product browsing and sorting, Product Details consistency, cart operations, the stable Checkout flow, and Logout.
-
-The addendum remains useful for manual confirmation if the public demo behavior changes or if a later fix/retest cycle becomes relevant.
+The addendum remains useful for manual confirmation if the public demo behavior changes or a later fix/retest cycle becomes relevant.
 
 ## Scope and residual risk
 
-This addendum does not establish account-by-account correctness outside the targeted scenarios. It also does not cover:
+This addendum establishes only the targeted account-specific findings listed above; it does not establish full account-by-account correctness.
 
-- cross-browser or cross-device compatibility;
-- formal accessibility testing;
-- performance and load testing;
-- security penetration testing;
-- API/backend testing;
-- database testing.
-
-Checkout and Navigation / Logout were completed later as separate checkpoints rather than folded into this defect-focused run.
+Broader project-level limits — including cross-browser/device compatibility, formal accessibility, performance/load, security penetration testing, API/backend testing, and database testing — are documented in the [Test Plan](test-plan.md). Checkout and Navigation / Logout were completed later as separate checkpoints.
 
 ## Related documents
 
@@ -97,4 +88,4 @@ Checkout and Navigation / Logout were completed later as separate checkpoints ra
 
 ## Conclusion
 
-The targeted special-user follow-up is complete for the planned manual scope. TR-3 provides traceability for 10 representative defect reproductions, while repeated instances of the same failure class were consolidated instead of being turned into duplicate cases or tickets.
+TR-3 provides traceability for 10 representative special-account defect reproductions. Repeated instances of an existing failure class were consolidated instead of being turned into duplicate cases or tickets.
