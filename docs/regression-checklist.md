@@ -116,3 +116,4 @@ When a formal regression run is performed:
 - [Targeted Special-User Addendum](special-user-addendum-post-execution-review.md)
 - [Checkout / Order Flow review](checkout-order-flow-post-execution-review.md)
 - [Navigation / Logout review](navigation-logout-post-execution-review.md)
+- [Final Manual QA Summary](final-manual-qa-summary.md)
