@@ -33,7 +33,7 @@ The closed Testiny run remains the formal execution record.
 
 ## Interpretation of the result
 
-TR-1 establishes a working authentication baseline for the scenarios included in this slice. It does not establish performance, security, backend, cross-browser, or cross-device correctness.
+TR-1 establishes a working authentication baseline for the scenarios included in this slice.
 
 One later finding is important for context: `performance_glitch_user` authenticated successfully in TR-1, so the related Login case correctly remained **Passed**. The visible delay associated with that account was investigated later in the Targeted Special-User Addendum and formalized separately as **SDQA-10**.
 
@@ -89,9 +89,11 @@ This classification is about automation priority, not technical feasibility.
 The Login slice was executed in one primary desktop browser and environment. The result does not cover:
 
 - cross-browser or cross-device compatibility;
-- formal performance/load behavior;
-- security testing;
-- API, database, or backend correctness;
+- formal accessibility testing;
+- performance and load testing;
+- security penetration testing;
+- API/backend testing;
+- database testing;
 - undocumented authentication rules that cannot be established from the public interface.
 
 ## Related documents
