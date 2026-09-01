@@ -48,7 +48,7 @@ Public source code or implementation details were not used to override the obser
 
 ## Current status
 
-The planned risk-based manual functional scope is complete. The repository is now going through a staged portfolio audit before the consolidated regression checklist and final manual QA summary are added. Targeted Playwright automation will follow for selected stable regression scenarios.
+The planned risk-based manual functional scope and the staged audit of the existing portfolio documentation are complete. The next documentation step is to consolidate the regression checklist and final manual QA summary. Targeted Playwright automation will follow for selected stable regression scenarios.
 
 ## Portfolio note
 
