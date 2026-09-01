@@ -1,9 +1,9 @@
 # SauceDemo Functional QA — Test Plan
 
 **Author:** Oussama MAOUCHE  
-**Version:** 1.5  
+**Version:** 1.6  
 **Last updated:** 1 September 2026  
-**Document status:** Manual execution, portfolio audit, and regression checklist complete; final manual QA summary pending
+**Document status:** Manual QA execution and reporting complete
 
 ## 1. Project Overview
 
@@ -160,7 +160,7 @@ The planned testing cycle can be considered complete when:
 - Test execution results have been recorded.
 - A final test summary has been prepared.
 
-**Current status:** the planned manual functional execution, staged portfolio audit, and consolidated regression checklist are complete. The final manual QA summary remains pending, so the wider documentation milestone is still open.
+**Current status:** the planned manual functional execution and reporting deliverables are complete, including the consolidated regression checklist and Final Manual QA Summary. The broader project remains open for a separate pre-Playwright audit/closure review whose scope will be defined later.
 
 ## 8. Test Result Criteria
 
