@@ -26,11 +26,12 @@ Shopping Cart coverage is distributed across the Inventory / Products and Checko
 - Black-box defect decisions based on observable behavior rather than assumed implementation intent.
 - Regression and automation-candidate decisions for stable, repeatable flows.
 
-Key design and planning artifacts:
+Key portfolio artifacts:
 
 - [Test Plan](docs/test-plan.md)
 - [Login Test Design](docs/login-test-design.md)
 - [Consolidated Regression Checklist](docs/regression-checklist.md)
+- [Final Manual QA Summary](docs/final-manual-qa-summary.md)
 
 ## Tools and environment
 
@@ -49,7 +50,7 @@ Public source code or implementation details were not used to override the obser
 
 ## Current status
 
-The planned risk-based manual functional scope, the staged audit of the existing portfolio documentation, and the consolidated regression checklist are complete. The final manual QA summary is the next documentation deliverable.
+The planned risk-based manual functional scope, staged portfolio audit, consolidated regression checklist, and final manual QA summary are complete. Before this track is closed or automation begins, a separate audit/closure review will be defined and completed.
 
 ## Portfolio note
 
