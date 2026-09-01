@@ -1,10 +1,36 @@
 # SauceDemo Functional QA
 
-This repository documents a manual black-box QA cycle I carried out on SauceDemo, a public e-commerce demo application. I combined exploratory testing with structured test cases, formal execution in Testiny, and defect tracking in Jira.
+This repository documents a manual black-box QA cycle I carried out on SauceDemo, a public e-commerce demo application.
 
-The scope follows the main user journey: authentication, product browsing and cart behavior, checkout and order completion, and navigation/logout. I also used selected SauceDemo test accounts to investigate distinct failure patterns without repeating the full suite for every account.
+I combined exploratory testing with structured test design, formal execution in Testiny, defect tracking in Jira, and regression planning. The scope follows the main user journey: authentication, product browsing and cart behavior, checkout and order completion, and navigation/logout.
 
-## Coverage at a glance
+## Project Snapshot
+
+**Manual · Black-box · Risk-based**
+
+- **5** closed Testiny runs
+- **57** formal test cases
+- **21** confirmed defect records
+- **19** consolidated regression checks
+
+The execution results describe the planned portfolio scope and should not be interpreted as an overall product-quality score. Some runs intentionally focused on reproducing specific failure patterns.
+
+## What This Project Demonstrates
+
+- Risk-based functional testing of the main SauceDemo user flows.
+- Exploratory testing followed by structured test design and formal execution.
+- Black-box defect investigation based on observable behavior rather than assumed implementation causes.
+- Traceability between Testiny execution records, Jira defects, and portfolio-level QA documentation.
+- Regression planning and identification of stable, repeatable candidates for later automation.
+
+## Start Here
+
+- [Final Manual QA Summary](docs/final-manual-qa-summary.md) — overall results, working baseline, confirmed defect coverage, residual risks, and conclusions.
+- [Test Plan](docs/test-plan.md) — objectives, scope, priorities, test approach, environment, defect-management rules, and limitations.
+- [Authentication / Login Test Design](docs/login-test-design.md) — a detailed example of structured test-design reasoning.
+- [Consolidated Regression Checklist](docs/regression-checklist.md) — 19 stable, high-value regression checks derived from the completed manual cycle.
+
+## Coverage at a Glance
 
 | Area | Formal execution | Result | Review |
 |---|---:|---|---|
@@ -14,44 +40,37 @@ The scope follows the main user journey: authentication, product browsing and ca
 | Checkout / Order Flow | 9 cases | 8 Passed, 1 Failed | [Post-execution review](docs/checkout-order-flow-post-execution-review.md) |
 | Navigation / Logout | 3 cases | 2 Passed, 1 Failed | [Post-execution review](docs/navigation-logout-post-execution-review.md) |
 
-These results should not be read as an overall product-quality score. The Inventory run mixes a stable baseline with targeted defect-reproduction cases, and the Special-User Addendum was intentionally defect-focused.
+The Inventory run combines a stable `standard_user` baseline with targeted `problem_user` defect reproductions. The Special-User Addendum was intentionally defect-focused.
 
 Shopping Cart coverage is distributed across the Inventory / Products and Checkout / Order Flow checkpoints rather than represented by a separate standalone run.
 
-## Work represented here
+## Test Approach
 
-- Risk-based manual functional testing of the main SauceDemo user flows.
-- Exploratory testing followed by focused formalization of reusable scenarios and confirmed defect reproductions.
-- Traceability between Testiny execution records and Jira defects without duplicating the same evidence across tools.
-- Black-box defect decisions based on observable behavior rather than assumed implementation intent.
-- Regression and automation-candidate decisions for stable, repeatable flows.
+Testing was manual, risk-based, and black-box, combining structured test cases with exploratory work.
 
-Key portfolio artifacts:
+Authentication received deeper test-design coverage, while the remaining modules received targeted functional coverage proportionate to their role in the main user journey.
 
-- [Test Plan](docs/test-plan.md)
-- [Login Test Design](docs/login-test-design.md)
-- [Consolidated Regression Checklist](docs/regression-checklist.md)
-- [Final Manual QA Summary](docs/final-manual-qa-summary.md)
+Where no formal requirement was available, expected behavior was based on visible UI cues, supplied demo data, consistency across the application, and common e-commerce behavior. Findings without a sufficiently supported expected result were retained as observations rather than being forced into defect reports.
 
-## Tools and environment
+Public source code or implementation details were not used to override observed application behavior.
+
+The full scope, test types, limitations, and defect-management rules are documented in the [Test Plan](docs/test-plan.md).
+
+## Tools and QA Records
 
 | Tool / environment | Use in this project |
 |---|---|
 | Testiny | Test-case management and formal execution records |
 | Jira | Confirmed defect reports, relationships, and supporting evidence |
-| GitHub | Portfolio documentation and project reviews |
+| GitHub | Portfolio-facing planning, test design, post-execution reviews, regression reference, and final QA documentation |
 | Firefox on Windows 11 | Primary manual test environment |
 
-## Test approach
+Detailed Testiny and Jira records are not duplicated in GitHub unless they add clear portfolio value.
 
-Testing was manual, risk-based, and black-box, using both scripted and exploratory work. Where no formal requirement was available, expected behavior was based on visible UI cues, supplied demo data, consistency across the application, and common e-commerce behavior. Ambiguous findings were kept as observations rather than being forced into defect reports.
+## Portfolio Note
 
-Public source code or implementation details were not used to override the observed behavior of the application. The full scope, test types, limitations, and defect-management rules are documented in the [Test Plan](docs/test-plan.md).
+This is an independent QA portfolio project by Oussama MAOUCHE.
 
-## Current status
+Sauce Labs is not a client and did not commission this work. SauceDemo is a public demonstration/training application, and some provided test accounts intentionally expose abnormal behavior.
 
-The planned risk-based manual functional scope, staged portfolio audit, consolidated regression checklist, and final manual QA summary are complete. Before this track is closed or automation begins, a separate audit/closure review will be defined and completed.
-
-## Portfolio note
-
-This is an independent QA portfolio project. Sauce Labs is not a client and did not commission this work. SauceDemo is a public demonstration/training application, and some provided test accounts intentionally expose abnormal behavior. Findings are documented as black-box portfolio results, not as production issues discovered on a client system.
+Findings are documented as black-box portfolio results based on observed application behavior, not as production issues discovered on a client system.
