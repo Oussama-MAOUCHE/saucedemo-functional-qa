@@ -58,9 +58,7 @@ This table reflects the `problem_user` reproductions recorded in TR-2. Later tar
 
 ## Evidence and traceability
 
-The closed Testiny report records all 14 results and the nine Jira links. Jira remains the detailed defect record, including reproduction information and supporting evidence.
-
-GitHub keeps the portfolio-level interpretation rather than duplicating the full Testiny execution or Jira evidence set. Additional screenshots were not added to every passing case because the baseline behavior had already been repeatedly confirmed.
+The closed Testiny report records all 14 results and the nine Jira links. Jira remains the detailed defect record; GitHub keeps the portfolio-level interpretation instead of duplicating the full execution and evidence set.
 
 ## Regression focus
 
@@ -75,7 +73,7 @@ A compact Inventory / Products regression set should prioritize:
 7. Cart badge count remains consistent with visible Cart contents.
 8. Cart state remains stable through normal in-app navigation and page refresh.
 
-Known special-account defect reproductions are useful for confirmation testing, but they should not replace the stable `standard_user` regression baseline.
+Known special-account defect reproductions remain useful for confirmation testing, but they do not replace the stable `standard_user` regression baseline.
 
 ## Automation candidates
 
@@ -95,25 +93,13 @@ These cases are deterministic, central to the shopping flow, and suitable for an
 
 They remain useful for defect confirmation and portfolio traceability, but the public demo project has no controlled fix cycle. Early automation is better spent on stable regression behavior than on encoding known demo-specific failures.
 
-This is an automation-priority decision, not a statement that the defect cases cannot be automated.
-
 ## Scope and residual risk
 
-This review is limited to the Inventory / Products checkpoint. Checkout, order completion, and Navigation / Logout were tested later as separate checkpoints rather than duplicated here.
+This review covers the Inventory / Products checkpoint only. Checkout, order completion, and Navigation / Logout were tested separately, while the later Special-User Addendum expanded account-specific coverage without becoming a full regression suite for every account.
 
-The Targeted Special-User Addendum also expanded account-specific coverage after TR-2, but it was deliberately bounded rather than a full regression suite for every account.
+Broader project-level limits — cross-browser/device compatibility, formal accessibility, performance/load, security penetration testing, API/backend testing, database testing, and undocumented business rules — are documented in the [Test Plan](test-plan.md).
 
-Project-level limitations still include:
-
-- cross-browser and cross-device compatibility;
-- formal accessibility testing;
-- performance and load testing;
-- security penetration testing;
-- API/backend testing;
-- database testing;
-- undocumented business rules that cannot be established from the public interface.
-
-SauceDemo is a public demonstration/training application. These findings are documented as black-box portfolio results, not as production defects discovered for a client.
+SauceDemo is a public demonstration/training application. These findings are black-box portfolio results, not production defects discovered for a client.
 
 ## Related documents
 
@@ -124,4 +110,4 @@ SauceDemo is a public demonstration/training application. These findings are doc
 
 ## Conclusion
 
-The Inventory / Products checkpoint is complete for the planned manual functional scope. TR-2 provides a stable `standard_user` baseline and traceable `problem_user` defect reproductions, while later account-specific investigation remains documented separately rather than being folded back into the original run.
+TR-2 establishes a stable `standard_user` Inventory / Products baseline and traceable `problem_user` defect reproductions. Later account-specific findings remain documented separately instead of being folded back into the original run.
