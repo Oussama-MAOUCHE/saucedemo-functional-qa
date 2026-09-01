@@ -101,9 +101,10 @@ Project-level limitations still include:
 - account-specific behavior outside the targeted scenarios already documented;
 - cross-browser and cross-device compatibility;
 - formal accessibility testing;
-- formal performance/load testing;
-- security testing;
-- API, database, and backend behavior;
+- performance and load testing;
+- security penetration testing;
+- API/backend testing;
+- database testing;
 - undocumented business rules that cannot be established from the public interface.
 
 ## Related documents
