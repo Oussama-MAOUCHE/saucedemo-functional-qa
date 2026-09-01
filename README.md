@@ -30,6 +30,7 @@ Key design and planning artifacts:
 
 - [Test Plan](docs/test-plan.md)
 - [Login Test Design](docs/login-test-design.md)
+- [Consolidated Regression Checklist](docs/regression-checklist.md)
 
 ## Tools and environment
 
@@ -48,7 +49,7 @@ Public source code or implementation details were not used to override the obser
 
 ## Current status
 
-The planned risk-based manual functional scope and the staged audit of the existing portfolio documentation are complete. The next documentation step is to consolidate the regression checklist and final manual QA summary. Targeted Playwright automation will follow for selected stable regression scenarios.
+The planned risk-based manual functional scope, the staged audit of the existing portfolio documentation, and the consolidated regression checklist are complete. The final manual QA summary is the next documentation deliverable.
 
 ## Portfolio note
 
