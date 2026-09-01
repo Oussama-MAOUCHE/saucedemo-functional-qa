@@ -81,9 +81,10 @@ This addendum does not establish account-by-account correctness outside the targ
 
 - cross-browser or cross-device compatibility;
 - formal accessibility testing;
-- formal performance/load testing;
-- security testing;
-- API, database, or backend behavior.
+- performance and load testing;
+- security penetration testing;
+- API/backend testing;
+- database testing.
 
 Checkout and Navigation / Logout were completed later as separate checkpoints rather than folded into this defect-focused run.
 
